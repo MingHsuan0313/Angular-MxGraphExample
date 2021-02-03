@@ -11,34 +11,37 @@ import { testTable } from '../test_data/example.table';
 export class AppComponent implements AfterViewInit {
 
   @ViewChild('graphContainer') graphContainer: ElementRef;
+  graph: mxGraph;
+  model: mxGraphModel;
 
   constructor(
-    private graphEditorService: GraphEditorService
   ) {
 
   }
 
   showER() {
-    console.log(this.graphEditorService.editor.graph);
-    console.log(this.graphEditorService.editor.graph.model);
+    console.log('mxGraph');
+    console.log(this.graph);
+    console.log('mxGraphModel');
+    console.log(this.model);
   }
 
   ngAfterViewInit() {
     setTimeout(() => {
-      let value = "Click Me";
-      let geometry = new mxGeometry(50, 50, 200, 200);
-      let parent = this.graphEditorService.getDefaultParent();
+      let element = document.getElementById('graph-container');
+      this.graph = new mxGraph(element);
+      this.model = this.graph.getModel();
+      try {
+        const parent = this.graph.getDefaultParent();
+        this.graph.getModel().beginUpdate();
 
-      // example1
-      let source = this.graphEditorService.insertVertex(value, geometry, parent, {});
-      let target = this.graphEditorService.insertVertex(value, geometry, parent, {});
-      this.graphEditorService.insertEdge(parent, source, target);
+        const vertex1 = this.graph.insertVertex(parent, '1', 'Vertex 1', 0, 0, 200, 80);
+        const vertex2 = this.graph.insertVertex(parent, '2', 'Vertex 2', 300, 300, 200, 80);
 
-      // example2
-      // this.graphEditorService.createComponent(testButton)
-
-      // example3
-      // this.graphEditorService.createComponent(testTable);
+        this.graph.insertEdge(parent, '', '', vertex1, vertex2);
+      } finally {
+        this.graph.getModel().endUpdate();
+      }
     }, 200)
   }
 }

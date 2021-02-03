@@ -1,5 +1,8 @@
 
 /******************      Model         **************/
+declare class mxGraphModel {
+
+}
 
 declare class mxCell {
 
