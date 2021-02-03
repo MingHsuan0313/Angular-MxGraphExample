@@ -30,15 +30,15 @@ export class AppComponent implements AfterViewInit {
       let parent = this.graphEditorService.getDefaultParent();
 
       // example1
-      let source = this.graphEditorService.insertVertex(value, geometry, parent, {});
-      let target = this.graphEditorService.insertVertex(value, geometry, parent, {});
-      this.graphEditorService.insertEdge(parent, source, target);
+      // let source = this.graphEditorService.insertVertex(value, geometry, parent, {});
+      // let target = this.graphEditorService.insertVertex(value, geometry, parent, {});
+      // this.graphEditorService.insertEdge(parent, source, target);
 
       // example2
       // this.graphEditorService.createComponent(testButton)
 
       // example3
-      // this.graphEditorService.createComponent(testTable);
+      this.graphEditorService.createComponent(testTable);
     }, 200)
   }
 }

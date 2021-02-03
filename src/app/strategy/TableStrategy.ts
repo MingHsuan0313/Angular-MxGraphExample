@@ -19,7 +19,7 @@ export class TableStrategy extends ICreateComponentStrategy {
 
     const tableBoxStyle = StyleLibrary[0]["table"]["tableBox"];
     tableBoxStyle["overflow"] = true;
-    const width = this.gridWidth * colNumber;
+    const width = this.gridWidth * colNumber + 10;
     const height = this.gridHeight * 2;
     let id = (parseInt(component.id)).toString();
     const tableBoxVertexGeometry = new mxGeometry(this.basex, this.basey, width, height);
