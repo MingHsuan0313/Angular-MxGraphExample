@@ -1,6 +1,6 @@
 
 /******************      Util      **************/
-
+declare var mxConstants: any;
 declare class mxUtils{
 
   alert(obj:any);
