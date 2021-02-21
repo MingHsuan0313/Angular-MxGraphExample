@@ -39,21 +39,16 @@ export class Configuration {
     }
 
     static configureGraphListener(editor: mxEditor): void {
+        editor.graph.addListener(mxEvent.CLICK, (sender, event) => {
+            let selectedCell = sender.selectionModel.cells[0];
+            if(selectedCell.type == "button")
+                alert('click')
+        })
+
         editor.graph.addListener(mxEvent.RESIZE_CELLS, (sender, event) => {
+            let selectedCell = sender.selectionModel.cells[0];
+            if(selectedCell.type == "button")
+                alert('resize')
         })
-
-        editor.graph.addListener(mxEvent.MOVE_CELLS, (sender, event) => {
-        })
-
-        editor.graph.addMouseListener(
-            {
-                mouseDown: function (sender, evt) {
-                },
-                mouseMove: function (sender, evt) {
-                },
-                mouseUp: function (sender, evt) {
-                }
-            }
-        );
     }
 }
