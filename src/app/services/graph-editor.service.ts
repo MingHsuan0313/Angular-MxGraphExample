@@ -3,6 +3,7 @@ import { Configuration } from '../config/GraphConfiguration';
 import { ButtonStrategy } from '../strategy/ButtonStrategy';
 import { FormStrategy } from '../strategy/FormStrategy';
 import { ICreateComponentStrategy } from '../strategy/ICreateComponentStrategy';
+import { InputTextStrategy } from '../strategy/InputTextStrategy';
 import { TableStrategy } from '../strategy/TableStrategy';
 
 @Injectable({
@@ -34,6 +35,9 @@ export class GraphEditorService {
     }
     else if(uiComponent['type'] == 'table') {
       this.setStrategy(new TableStrategy());
+    }
+    else if(uiComponent['type'] == 'inputText') {
+      this.setStrategy(new InputTextStrategy());
     }
     else if(uiComponent['type'] == 'form') {
       this.setStrategy(new FormStrategy());

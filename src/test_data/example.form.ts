@@ -12,6 +12,22 @@ export const testForm = {
     'name': 'login',
     'componentList': [
         {
+            'id': '2',
+            'selector': 'input-32',
+            'category': 'input-control',
+            'type': 'inputText',
+            'text': 'account',
+            'description': 'account'
+        },
+        {
+            'id': '4',
+            'selector': 'input-31',
+            'category': 'input-control',
+            'type': 'inputText',
+            'text': 'password',
+            'description': 'password'
+        },
+        {
             'id': '0',
             'selector': 'button-23',
             'category': 'navigation',
