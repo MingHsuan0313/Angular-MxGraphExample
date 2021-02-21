@@ -18,6 +18,7 @@ export class ButtonStrategy extends ICreateComponentStrategy {
     buttonCell["componentPart"] = "box";
     buttonCell["isPrimary"] = true;
     buttonCell["componentID"] = buttonComponent.id;
+    buttonCell["type"] = buttonComponent.type;
     return buttonCell;
   }
 

@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { GraphEditorService } from './services/graph-editor.service';
 import { testButton } from '../test_data/example.button';
 import { testTable } from '../test_data/example.table';
+import { testForm } from 'src/test_data/example.form';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +39,10 @@ export class AppComponent implements AfterViewInit {
       // this.graphEditorService.createComponent(testButton)
 
       // example3
-      this.graphEditorService.createComponent(testTable);
+      // this.graphEditorService.createComponent(testTable);
+
+      // example4
+      this.graphEditorService.createComponent(testForm);
     }, 200)
   }
 }

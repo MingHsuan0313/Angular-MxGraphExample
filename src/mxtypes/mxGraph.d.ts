@@ -122,6 +122,7 @@ declare class mxGraph {
   containsValidationErrorsResource;
   collapseExpandResource;
   getTooltipForCell(cell);
+  refresh();
   init(container);
   createHandlers(container);
   createSelectionModel();

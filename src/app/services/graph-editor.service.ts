@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Configuration } from '../config/GraphConfiguration';
 import { ButtonStrategy } from '../strategy/ButtonStrategy';
+import { FormStrategy } from '../strategy/FormStrategy';
 import { ICreateComponentStrategy } from '../strategy/ICreateComponentStrategy';
 import { TableStrategy } from '../strategy/TableStrategy';
 
@@ -27,15 +28,19 @@ export class GraphEditorService {
     return this.editor.graph.insertEdge(parent, '', '', sourceCell, targetCell);
   }
 
-  createComponent(uiComponent) {
+  createComponent(uiComponent, parent?) {
     if(uiComponent['type'] == 'button') {
       this.setStrategy(new ButtonStrategy());
     }
     else if(uiComponent['type'] == 'table') {
       this.setStrategy(new TableStrategy());
     }
-    let parent = this.editor.graph.defaultParent;
-    this.createComponentStrategy.createComponent(this, uiComponent, parent);
+    else if(uiComponent['type'] == 'form') {
+      this.setStrategy(new FormStrategy());
+    }
+    if(parent == undefined)
+      parent = this.editor.graph.defaultParent;
+    return this.createComponentStrategy.createComponent(this, uiComponent, parent);
   }
 
   setStrategy(strategy: ICreateComponentStrategy) {

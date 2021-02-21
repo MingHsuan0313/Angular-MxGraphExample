@@ -27,6 +27,7 @@ export class TableStrategy extends ICreateComponentStrategy {
     tableBoxCell["componentPart"] = "box";
     tableBoxCell["isPrimary"] = true;
     tableBoxCell["componentID"] = component.id;
+    tableBoxCell["type"] = component.type;
     return tableBoxCell;
   }
 

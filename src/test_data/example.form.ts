@@ -8,7 +8,7 @@ export const testForm = {
         'x': 50,
         'y': 50
     },
-    'type': 'button',
+    'type': 'form',
     'name': 'login',
     'componentList': [
         {
