@@ -1,20 +1,34 @@
 import { ICreateComponentStrategy } from "./ICreateComponentStrategy";
 import { StyleLibrary } from "../styleLibrary";
 import { GraphEditorService } from "../services/graph-editor.service";
+import { ButtonComponent } from "../model/ButtonCompoent.model";
 
 export class ButtonStrategy extends ICreateComponentStrategy {
-
-  constructor(geometry?) {
+  constructor(geometry?: mxGeometry) {
     super(geometry);
   }
 
-  createButtonVertex(graphEditorService: GraphEditorService, buttonComponent, parent:mxCell) {
+  createButtonVertex(
+    graphEditorService: GraphEditorService,
+    buttonComponent: ButtonComponent,
+    parent: mxCell
+  ) {
     const style = StyleLibrary[0]["button"];
     const width = 15 * buttonComponent.text.length;
     const height = 40;
-    const buttonGeometry = new mxGeometry(this.basex, this.basey, width, height);
+    const buttonGeometry = new mxGeometry(
+      this.basex,
+      this.basey,
+      width,
+      height
+    );
 
-    let buttonCell = graphEditorService.insertVertex(buttonComponent.text, buttonGeometry, parent, style);
+    let buttonCell = graphEditorService.insertVertex(
+      buttonComponent.text,
+      buttonGeometry,
+      parent,
+      style
+    );
     buttonCell["componentPart"] = "box";
     buttonCell["isPrimary"] = true;
     buttonCell["componentID"] = buttonComponent.id;
@@ -22,8 +36,16 @@ export class ButtonStrategy extends ICreateComponentStrategy {
     return buttonCell;
   }
 
-  createComponent(graphEditorService: GraphEditorService, buttonComponent, parent:mxCell): mxCell{
-    let buttonVertex = this.createButtonVertex(graphEditorService, buttonComponent, parent);
+  createComponent(
+    graphEditorService: GraphEditorService,
+    buttonComponent: ButtonComponent,
+    parent: mxCell
+  ): mxCell {
+    let buttonVertex = this.createButtonVertex(
+      graphEditorService,
+      buttonComponent,
+      parent
+    );
     return buttonVertex;
   }
 }

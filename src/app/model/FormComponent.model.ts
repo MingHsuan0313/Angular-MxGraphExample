@@ -1,5 +1,3 @@
 import { CompositeComponent } from "./CompositeComponent.model";
 
-export class FormComponent extends CompositeComponent {
-
-}
+export class FormComponent extends CompositeComponent {}

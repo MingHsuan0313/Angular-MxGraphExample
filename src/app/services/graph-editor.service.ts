@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Configuration } from '../config/GraphConfiguration';
-import { ButtonStrategy } from '../strategy/ButtonStrategy';
-import { FormStrategy } from '../strategy/FormStrategy';
-import { ICreateComponentStrategy } from '../strategy/ICreateComponentStrategy';
-import { InputTextStrategy } from '../strategy/InputTextStrategy';
-import { TableStrategy } from '../strategy/TableStrategy';
+import { Injectable } from "@angular/core";
+import { Configuration } from "../config/GraphConfiguration";
+import { ButtonStrategy } from "../strategy/ButtonStrategy";
+import { FormStrategy } from "../strategy/FormStrategy";
+import { ICreateComponentStrategy } from "../strategy/ICreateComponentStrategy";
+import { InputTextStrategy } from "../strategy/InputTextStrategy";
+import { TableStrategy } from "../strategy/TableStrategy";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class GraphEditorService {
   editor: mxEditor;
@@ -15,36 +15,46 @@ export class GraphEditorService {
 
   constructor() {
     setTimeout(() => {
-      let element = document.getElementById('graph-container');
+      let element = document.getElementById("graph-container");
       this.initializeEditor(element, "assets/keyhandler.xml");
-    }, 100)
+    }, 100);
   }
 
   insertVertex(value: string, geometry: mxGeometry, parent, style: {}) {
     let styleDescription = this.convertJsonObjectToStyleDescription(style);
-    return this.editor.graph.insertVertex(parent, 0, value, geometry.x, geometry.y, geometry.width, geometry.height, styleDescription, "");
+    return this.editor.graph.insertVertex(
+      parent,
+      0,
+      value,
+      geometry.x,
+      geometry.y,
+      geometry.width,
+      geometry.height,
+      styleDescription,
+      ""
+    );
   }
 
   insertEdge(parent, sourceCell, targetCell) {
-    return this.editor.graph.insertEdge(parent, '', '', sourceCell, targetCell);
+    return this.editor.graph.insertEdge(parent, "", "", sourceCell, targetCell);
   }
 
   createComponent(uiComponent, parent?) {
-    if(uiComponent['type'] == 'button') {
+    if (uiComponent["type"] == "button") {
       this.setStrategy(new ButtonStrategy());
-    }
-    else if(uiComponent['type'] == 'table') {
+    } else if (uiComponent["type"] == "table") {
       this.setStrategy(new TableStrategy());
-    }
-    else if(uiComponent['type'] == 'inputText') {
+    } else if (uiComponent["type"] == "inputText") {
       this.setStrategy(new InputTextStrategy());
-    }
-    else if(uiComponent['type'] == 'form') {
+    } else if (uiComponent["type"] == "form") {
       this.setStrategy(new FormStrategy());
     }
-    if(parent == undefined)
-      parent = this.editor.graph.defaultParent;
-    return this.createComponentStrategy.createComponent(this, uiComponent, parent);
+    if (parent == undefined) parent = this.editor.graph.defaultParent;
+    return this.createComponentStrategy.createComponent(
+      this,
+      uiComponent,
+      parent
+    );
   }
 
   setStrategy(strategy: ICreateComponentStrategy) {
@@ -71,12 +81,10 @@ export class GraphEditorService {
     let styleKeys = Object.keys(styleObj);
     for (let index = 0; index < styleKeys.length; index++) {
       let key = styleKeys[index];
-      if (styleObj[key] == undefined)
-        continue
+      if (styleObj[key] == undefined) continue;
       if (index == styleKeys.length - 1)
-        styleDescription = styleDescription + `${key}=${styleObj[key]};`
-      else
-        styleDescription = styleDescription + `${key}=${styleObj[key]};`
+        styleDescription = styleDescription + `${key}=${styleObj[key]};`;
+      else styleDescription = styleDescription + `${key}=${styleObj[key]};`;
     }
     return styleDescription;
   }

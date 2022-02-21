@@ -1,12 +1,12 @@
 export abstract class ICreateComponentStrategy {
   basex: number;
   basey: number;
-  height:number;
+  height: number;
   width: number;
-  restoreMode:Boolean = false;
+  restoreMode: Boolean = false;
 
-  constructor(geometry?) {
-    if (geometry == undefined) {
+  constructor(geometry: mxGeometry) {
+    if (geometry === undefined) {
       this.basex = 0;
       this.basey = 0;
     } else {
@@ -16,5 +16,5 @@ export abstract class ICreateComponentStrategy {
       this.height = geometry.height;
     }
   }
-  abstract createComponent(graphEditorService, uiComponent, parent?:mxCell);
+  abstract createComponent(graphEditorService, uiComponent, parent?: mxCell);
 }
