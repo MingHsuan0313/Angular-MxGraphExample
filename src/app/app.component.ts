@@ -15,8 +15,8 @@ export class AppComponent implements AfterViewInit {
   constructor(private graphEditorService: GraphEditorService) {}
 
   showER() {
-    console.log(this.graphEditorService.editor.graph);
-    console.log(this.graphEditorService.editor.graph.model);
+    console.log("graph", this.graphEditorService.editor.graph);
+    console.log("graph model", this.graphEditorService.editor.graph.model);
   }
 
   ngAfterViewInit() {

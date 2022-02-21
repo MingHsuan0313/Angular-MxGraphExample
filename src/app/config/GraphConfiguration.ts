@@ -1,4 +1,4 @@
-export class Configuration {
+export class GraphConfiguration {
   static configureEditorKeyBinding(editor: mxEditor): void {
     editor.addAction("mx-cut", (event: mxEvent) => {
       editor.execute("cut");

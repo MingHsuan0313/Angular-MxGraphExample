@@ -4,9 +4,7 @@
 /// <reference path="Handlers.d.ts"/>
 /// <reference path="Shape.d.ts"/>
 
-
 declare class mxGraph {
-
   constructor(container: any);
 
   mouseListeners;
@@ -187,10 +185,26 @@ declare class mxGraph {
   removeCellsFromParent(cells);
   updateGroupBounds(cells, border, moveGroup);
   cloneCells(cells, allowInvalidEdges);
-  insertEdge(parent, id, value, source, target);
+  insertEdge(
+    parent: mxCell,
+    id: string,
+    value: string,
+    source: mxCell,
+    target: mxCell
+  );
   insertEdge(parent, id, value, source, target, style);
   createEdge(parent, id, value, source, target, style);
-  insertVertex(parent, id, value, x, y, width, height, style, relative);
+  insertVertex(
+    parent: mxCell,
+    id: number | string,
+    value: string,
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+    style: string,
+    relative: string
+  );
   insertVertex(parent, id, value, x, y, width, height);
   addEdge(edge, parent, source, target, index);
   addCell(cell, parent, index, source, target);
@@ -381,7 +395,7 @@ declare class mxGraph {
   isValidSource(cell);
   isValidTarget(cell);
   isValidConnection(source, target);
-  setConnectable(connectable);
+  setConnectable(connectable: boolean);
   isConnectable(connectable);
   setPanning(enabled);
   isEditing(cell);

@@ -1,26 +1,22 @@
-
 /******************      Util      **************/
 declare var mxConstants: any;
-declare class mxUtils{
-
-  alert(obj:any);
+declare class mxUtils {
+  alert(obj: any);
 
   static clone(style);
-  static load(filePath);
+  static load(filePath: string);
   static getXml(result: any);
   static makeDraggable(element, graphF, funct, dragElement);
   static parseXml(xml);
-  static convertPoint(container,x,y);
+  static convertPoint(container, x, y);
 }
 
 /** Common interfaces for Utils */
 declare module Util {
-
   /** Common handler for addListener of EventSource */
   interface EventHandler {
-    (sender: any, state: any);
+    (sender: mxCell, state: any);
   }
-
 }
 
 /**
@@ -48,7 +44,6 @@ declare class mxEventObject {
  * turn object keys into strings.
  */
 declare class mxDictionary {
-
   /** Stores the (key, value) pairs in this dictionary. */
   map: any;
 
@@ -71,33 +66,25 @@ declare class mxDictionary {
   getValues: () => string[];
 }
 
-
-
-
 /**
  * Base class for objects that dispatch named events.  To create a subclass that inherits from mxEventSource, the following code is used.
  */
 declare class mxEventSource {
-
   /**
    * Binds the specified function to the given event name.  If no event name is given, then the listener
    * is registered for all events.
    * The parameters of the listener are the sender and an mxEventObject.
    */
   addListener(name: any, func: Util.EventHandler);
-
 }
 
 /**
  * Encapsulates the URL, width and height of an image.
  */
 declare class mxImage {
-
   /** Encapsulates the URL, width and height of an image. */
   constructor(src: string, width: number, height: number);
-
 }
-
 
 /**
  * Cross-browser DOM event support
@@ -123,9 +110,7 @@ declare class mxMouseEvent {
   consume(preventDefault);
 }
 
-
 declare class mxPoint {
-
   /** Constructs a new point for the optional x and y coordinates.  If no coordinates are given, then the default values for x and y are used. */
   constructor(x: number, y: number);
 
@@ -139,7 +124,6 @@ declare class mxPoint {
   equals(obj: any): boolean;
 
   clone();
-
 }
 
 /******************      Util end      **************/

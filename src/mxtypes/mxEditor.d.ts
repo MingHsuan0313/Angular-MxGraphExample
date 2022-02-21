@@ -10,7 +10,7 @@ declare class mxEditor {
   redo();
   undo();
   save(url, linefeed);
-  setGraphContainer(container);
+  setGraphContainer(container: HTMLElement);
   swapStyles(first, second);
   execute(action: string);
   setModified(value);

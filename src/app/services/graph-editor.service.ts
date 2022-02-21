@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Configuration } from "../config/GraphConfiguration";
+import { GraphConfiguration } from "../config/GraphConfiguration";
 import { ButtonStrategy } from "../strategy/ButtonStrategy";
 import { FormStrategy } from "../strategy/FormStrategy";
 import { ICreateComponentStrategy } from "../strategy/ICreateComponentStrategy";
@@ -20,7 +20,12 @@ export class GraphEditorService {
     }, 100);
   }
 
-  insertVertex(value: string, geometry: mxGeometry, parent, style: {}) {
+  insertVertex(
+    value: string,
+    geometry: mxGeometry,
+    parent: mxCell,
+    style: Object
+  ) {
     let styleDescription = this.convertJsonObjectToStyleDescription(style);
     return this.editor.graph.insertVertex(
       parent,
@@ -35,11 +40,11 @@ export class GraphEditorService {
     );
   }
 
-  insertEdge(parent, sourceCell, targetCell) {
+  insertEdge(parent: mxCell, sourceCell: mxCell, targetCell: mxCell) {
     return this.editor.graph.insertEdge(parent, "", "", sourceCell, targetCell);
   }
 
-  createComponent(uiComponent, parent?) {
+  createComponent(uiComponent, parent?: mxCell) {
     if (uiComponent["type"] == "button") {
       this.setStrategy(new ButtonStrategy());
     } else if (uiComponent["type"] == "table") {
@@ -72,11 +77,11 @@ export class GraphEditorService {
 
     let config = mxUtils.load(configurePath).getDocumentElement();
     this.editor.configure(config);
-    Configuration.configureEditorKeyBinding(this.editor);
-    Configuration.configureGraphListener(this.editor);
+    GraphConfiguration.configureEditorKeyBinding(this.editor);
+    GraphConfiguration.configureGraphListener(this.editor);
   }
 
-  convertJsonObjectToStyleDescription(styleObj: any): String {
+  convertJsonObjectToStyleDescription(styleObj: Object): string {
     let styleDescription = "";
     let styleKeys = Object.keys(styleObj);
     for (let index = 0; index < styleKeys.length; index++) {

@@ -1,0 +1,10 @@
+.app-header {
+  height: 5vh;
+  padding-bottom: 15px;
+  background-color: #333333;
+}
+
+.editor-body {
+  background-color: #f7f7f7;
+  height: 80vh;
+}
