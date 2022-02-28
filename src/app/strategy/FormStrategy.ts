@@ -39,7 +39,7 @@ export class FormStrategy extends ICreateComponentStrategy {
       formComponent,
       parent
     );
-    let subComponentXOffset = 15;
+    const subComponentXOffset = 15;
     let subComponentYOffset = 40;
     let maxWidth = 200;
     for (let subUIComponent of formComponent["componentList"]) {
@@ -50,14 +50,16 @@ export class FormStrategy extends ICreateComponentStrategy {
       );
       vertex["geometry"].x = subComponentXOffset;
       vertex["geometry"].y = subComponentYOffset;
-      if (vertex["geometry"].width > maxWidth)
-        maxWidth = vertex["geometry"].width;
+      maxWidth =
+        vertex["geometry"].width > maxWidth
+          ? vertex["geometry"].wdth
+          : maxWidth;
       subComponentYOffset =
         subComponentYOffset + vertex["geometry"].height + 10;
     }
 
     // resize parent vertex
-    let newmxGeometry = new mxGeometry(
+    const newmxGeometry = new mxGeometry(
       this.basex,
       this.basey,
       maxWidth + 50,
@@ -65,7 +67,6 @@ export class FormStrategy extends ICreateComponentStrategy {
     );
     formBoxCell.setGeometry(newmxGeometry);
     graphEditorService.editor.graph.refresh();
-
     return formBoxCell;
   }
 }

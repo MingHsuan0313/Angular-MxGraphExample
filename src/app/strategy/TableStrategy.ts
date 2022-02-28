@@ -1,6 +1,7 @@
 import { ICreateComponentStrategy } from "./ICreateComponentStrategy";
 import { StyleLibrary } from "../styleLibrary";
 import { GraphEditorService } from "../services/graph-editor.service";
+import { TableComponent } from "../model/TableComponent.model";
 
 export class TableStrategy extends ICreateComponentStrategy {
   gridWidth: number;
@@ -14,7 +15,7 @@ export class TableStrategy extends ICreateComponentStrategy {
 
   createTableBoxVertex(
     graphEditorService: GraphEditorService,
-    component,
+    component: TableComponent,
     parent: mxCell
   ): mxCell {
     const headerList = component.headers.trim().split(" ");
@@ -24,13 +25,7 @@ export class TableStrategy extends ICreateComponentStrategy {
     tableBoxStyle["overflow"] = true;
     const width = this.gridWidth * colNumber + 10;
     const height = this.gridHeight * 2;
-    let id = parseInt(component.id).toString();
-    const tableBoxVertexGeometry = new mxGeometry(
-      this.basex,
-      this.basey,
-      width,
-      height
-    );
+    const tableBoxVertexGeometry = new mxGeometry(300, 300, width, height);
     let tableBoxCell = graphEditorService.insertVertex(
       "",
       tableBoxVertexGeometry,
@@ -56,7 +51,6 @@ export class TableStrategy extends ICreateComponentStrategy {
       const tableHeaderStyle = StyleLibrary[0]["table"]["tableHeader"];
       tableHeaderStyle["overflow"] = true;
       const x = i * this.gridWidth;
-      let id = (parseInt(component.id) + 1 + i).toString();
       const tableHeaderVertexGeometry = new mxGeometry(
         x,
         0,
@@ -83,7 +77,6 @@ export class TableStrategy extends ICreateComponentStrategy {
     const tableDataStyle = StyleLibrary[0]["table"]["tableData_grey"];
     const headerList = component.headers.trim().split(" ");
     const colNumber = headerList.length;
-    const rows = component.rows.trim().split(" ");
     tableDataStyle["overflow"] = true;
 
     for (let i = 0; i < colNumber; i++) {
@@ -95,7 +88,6 @@ export class TableStrategy extends ICreateComponentStrategy {
         this.gridWidth,
         this.gridHeight
       );
-      let id = (parseInt(component.id) + colNumber + 1 + i).toString();
       let tableDataCell = graphEditorService.insertVertex(
         component["rows"].split(" ")[i],
         tableDataVertexGeometry,

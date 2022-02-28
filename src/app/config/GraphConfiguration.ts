@@ -40,12 +40,12 @@ export class GraphConfiguration {
   static configureGraphListener(editor: mxEditor): void {
     editor.graph.addListener(mxEvent.CLICK, (sender, event) => {
       let selectedCell = sender.selectionModel.cells[0];
-      if (selectedCell.type == "button") alert("click");
+      if (selectedCell && selectedCell.type == "button") alert("click");
     });
 
     editor.graph.addListener(mxEvent.RESIZE_CELLS, (sender, event) => {
       let selectedCell = sender.selectionModel.cells[0];
-      if (selectedCell.type == "button") alert("resize");
+      if (selectedCell && selectedCell.type == "button") alert("resize");
     });
   }
 }

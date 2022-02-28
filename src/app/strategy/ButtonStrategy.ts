@@ -41,11 +41,6 @@ export class ButtonStrategy extends ICreateComponentStrategy {
     buttonComponent: ButtonComponent,
     parent: mxCell
   ): mxCell {
-    let buttonVertex = this.createButtonVertex(
-      graphEditorService,
-      buttonComponent,
-      parent
-    );
-    return buttonVertex;
+    return this.createButtonVertex(graphEditorService, buttonComponent, parent);
   }
 }

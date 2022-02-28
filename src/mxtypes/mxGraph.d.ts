@@ -35,7 +35,7 @@ declare class mxGraph {
   initialTouchY;
   tolerance;
   defaultOverlap;
-  defaultParent;
+  defaultParent: mxCell;
   alternateEdgeStyle;
   backgroundImage;
   pageVisible;

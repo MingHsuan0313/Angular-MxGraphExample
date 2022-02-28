@@ -34,11 +34,10 @@ export class InputTextStrategy extends ICreateComponentStrategy {
     inputTextComponent: InputTextComponent,
     parent: mxCell
   ): mxCell {
-    let inputTextCell = this.createButtonVertex(
+    return this.createButtonVertex(
       graphEditorService,
       inputTextComponent,
       parent
     );
-    return inputTextCell;
   }
 }

@@ -1,3 +1,6 @@
+import { UIComponent } from "../model/UIComponent.model";
+import { GraphEditorService } from "../services/graph-editor.service";
+
 export abstract class ICreateComponentStrategy {
   basex: number;
   basey: number;
@@ -16,5 +19,9 @@ export abstract class ICreateComponentStrategy {
       this.height = geometry.height;
     }
   }
-  abstract createComponent(graphEditorService, uiComponent, parent?: mxCell);
+  abstract createComponent(
+    graphEditorService: GraphEditorService,
+    uiComponent: UIComponent,
+    parent?: mxCell
+  );
 }

@@ -15,29 +15,13 @@ export class AppComponent implements AfterViewInit {
   constructor(private graphEditorService: GraphEditorService) {}
 
   showER() {
-    console.log("graph", this.graphEditorService.editor.graph);
+    console.log("grap", this.graphEditorService.editor.graph);
     console.log("graph model", this.graphEditorService.editor.graph.model);
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      let value = "Click Me";
-      let geometry = new mxGeometry(50, 50, 200, 200);
-      let parent = this.graphEditorService.getDefaultParent();
-
-      // example1
-      // let source = this.graphEditorService.insertVertex(value, geometry, parent, {});
-      // let target = this.graphEditorService.insertVertex(value, geometry, parent, {});
-      // this.graphEditorService.insertEdge(parent, source, target);
-
-      // example2
-      // this.graphEditorService.createComponent(testButton)
-
-      // example3
-      // this.graphEditorService.createComponent(testTable);
-
-      // example4
-      this.graphEditorService.createComponent(testForm);
-    }, 200);
+    this.graphEditorService.initializeEditor("assets/keyhandler.xml");
+    this.graphEditorService.createComponent(testForm);
+    this.graphEditorService.createComponent(testTable);
   }
 }
