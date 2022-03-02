@@ -16,12 +16,7 @@ export class ButtonStrategy extends ICreateComponentStrategy {
     const style = StyleLibrary[0]["button"];
     const width = 15 * buttonComponent.text.length;
     const height = 40;
-    const buttonGeometry = new mxGeometry(
-      this.basex,
-      this.basey,
-      width,
-      height
-    );
+    const buttonGeometry = new mxGeometry(550, 150, width, height);
 
     let buttonCell = graphEditorService.insertVertex(
       buttonComponent.text,

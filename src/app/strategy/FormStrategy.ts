@@ -42,20 +42,16 @@ export class FormStrategy extends ICreateComponentStrategy {
     const subComponentXOffset = 15;
     let subComponentYOffset = 40;
     let maxWidth = 200;
-    for (let subUIComponent of formComponent["componentList"]) {
-      console.log(subUIComponent);
+    for (let subUIComponent of formComponent.componentList) {
       let vertex = graphEditorService.createComponent(
         subUIComponent,
         formBoxCell
       );
-      vertex["geometry"].x = subComponentXOffset;
-      vertex["geometry"].y = subComponentYOffset;
+      vertex.geometry.x = subComponentXOffset;
+      vertex.geometry.y = subComponentYOffset;
       maxWidth =
-        vertex["geometry"].width > maxWidth
-          ? vertex["geometry"].wdth
-          : maxWidth;
-      subComponentYOffset =
-        subComponentYOffset + vertex["geometry"].height + 10;
+        vertex.geometry.width > maxWidth ? vertex.geometry.width : maxWidth;
+      subComponentYOffset = subComponentYOffset + vertex.geometry.height + 10;
     }
 
     // resize parent vertex

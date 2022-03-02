@@ -104,7 +104,7 @@ export class TableStrategy extends ICreateComponentStrategy {
     graphEditorService: GraphEditorService,
     component,
     parent: mxCell
-  ) {
+  ): mxCell {
     mxConstants.SHADOW_OPACITY = 0.3;
     let tableBoxCell = this.createTableBoxVertex(
       graphEditorService,

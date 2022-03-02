@@ -1,10 +1,15 @@
 .app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   height: 5vh;
   padding-bottom: 15px;
   background-color: #333333;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .editor-body {
-  background-color: #f7f7f7;
   height: 80vh;
+  background-color: white;
 }

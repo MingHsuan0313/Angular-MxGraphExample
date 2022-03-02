@@ -23,5 +23,5 @@ export abstract class ICreateComponentStrategy {
     graphEditorService: GraphEditorService,
     uiComponent: UIComponent,
     parent?: mxCell
-  );
+  ): mxCell;
 }

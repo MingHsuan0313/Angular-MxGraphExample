@@ -37,15 +37,5 @@ export class GraphConfiguration {
     });
   }
 
-  static configureGraphListener(editor: mxEditor): void {
-    editor.graph.addListener(mxEvent.CLICK, (sender, event) => {
-      let selectedCell = sender.selectionModel.cells[0];
-      if (selectedCell && selectedCell.type == "button") alert("click");
-    });
-
-    editor.graph.addListener(mxEvent.RESIZE_CELLS, (sender, event) => {
-      let selectedCell = sender.selectionModel.cells[0];
-      if (selectedCell && selectedCell.type == "button") alert("resize");
-    });
-  }
+  static configureGraphListener(editor: mxEditor): void {}
 }

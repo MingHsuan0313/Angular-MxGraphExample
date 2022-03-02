@@ -15,7 +15,16 @@ export class GraphEditorService {
   createComponentStrategy: ICreateComponentStrategy;
   element: HTMLElement;
 
-  constructor() {}
+  initializeEditor(configurePath: string): void {
+    this.element = document.getElementById("graph-container");
+    this.editor = new mxEditor();
+    this.editor.setGraphContainer(this.element);
+    this.editor.graph.setConnectable(true);
+    const config = mxUtils.load(configurePath).getDocumentElement();
+    this.editor.configure(config);
+    GraphConfiguration.configureEditorKeyBinding(this.editor);
+    GraphConfiguration.configureGraphListener(this.editor);
+  }
 
   insertVertex(
     value: string,
@@ -41,7 +50,7 @@ export class GraphEditorService {
     return this.editor.graph.insertEdge(parent, "", "", sourceCell, targetCell);
   }
 
-  createComponent(uiComponent: UIComponent, parent?: mxCell) {
+  createComponent(uiComponent: UIComponent, parent?: mxCell): mxCell {
     if (uiComponent["type"] == "button") {
       this.setStrategy(new ButtonStrategy());
     } else if (uiComponent["type"] == "table") {
@@ -66,17 +75,6 @@ export class GraphEditorService {
     return this.editor.graph.getDefaultParent();
   }
 
-  initializeEditor(configurePath: string): void {
-    this.element = document.getElementById("graph-container");
-    this.editor = new mxEditor();
-    this.editor.setGraphContainer(this.element);
-    this.editor.graph.setConnectable(true);
-    const config = mxUtils.load(configurePath).getDocumentElement();
-    this.editor.configure(config);
-    GraphConfiguration.configureEditorKeyBinding(this.editor);
-    GraphConfiguration.configureGraphListener(this.editor);
-  }
-
   convertJsonObjectToStyleDescription(styleObj: Object): string {
     let styleDescription = "";
     const styleKeys = Object.keys(styleObj);
@@ -88,5 +86,9 @@ export class GraphEditorService {
       else styleDescription = styleDescription + `${key}=${styleObj[key]};`;
     }
     return styleDescription;
+  }
+
+  getGraph() {
+    return this.editor.graph;
   }
 }

@@ -19,9 +19,19 @@ export class AppComponent implements AfterViewInit {
     console.log("graph model", this.graphEditorService.editor.graph.model);
   }
 
+  addButton() {
+    this.graphEditorService.createComponent(testButton);
+  }
+
+  addForm() {
+    this.graphEditorService.createComponent(testForm);
+  }
+
+  addTable() {
+    this.graphEditorService.createComponent(testTable);
+  }
+
   ngAfterViewInit() {
     this.graphEditorService.initializeEditor("assets/keyhandler.xml");
-    this.graphEditorService.createComponent(testForm);
-    this.graphEditorService.createComponent(testTable);
   }
 }

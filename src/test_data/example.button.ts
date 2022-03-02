@@ -9,7 +9,7 @@ export const testButton = {
     y: 50,
   },
   type: "button",
-  name: "login",
-  text: "login", // this is vertex value
+  name: "testBtn",
+  text: "Click Me", // this is vertex value
   href: "dashboard",
 };
