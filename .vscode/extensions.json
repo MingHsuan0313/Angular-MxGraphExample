@@ -1,13 +1,23 @@
 {
-	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
-	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+  // See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+  // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
 
-	// List of extensions which should be recommended for users of this workspace.
-	"recommendations": [
-		
-	],
-	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
-	"unwantedRecommendations": [
-		
-	]
+  // List of extensions which should be recommended for users of this workspace.
+  "recommendations": [
+    "vscodevim.vim",
+    "VSpaceCode.whichkey",
+    "alefragnani.Bookmarks",
+    "be5invis.vscode-custom-css",
+    "mhutchie.git-graph",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "johnpapa.vscode-peacock",
+    "alefragnani.project-manager",
+    "jacobdufault.fuzzy-search",
+    "gitkraken.gitkraken-authentication",
+    "sleistner.vscode-fileutils",
+    "Shan.code-settings-sync"
+  ],
+  // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+  "unwantedRecommendations": []
 }

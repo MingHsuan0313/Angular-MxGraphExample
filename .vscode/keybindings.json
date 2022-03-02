@@ -1,7 +1,0 @@
-[
-  {
-    "key": "space",
-    "command": "whichkey.show",
-    "when": "editorTextFocus && vim.mode != 'Insert'"
-  }
-]
