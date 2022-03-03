@@ -1,139 +1,145 @@
-** To move the cursor, press the h,j,k,l keys as indicated. **
-    ^
-    k		     Hint:  The h key is at the left and moves left.
-< h	  l >		 The l key is at the right and moves right.
-    j			   The j key looks like a down arrow.
-    v
+※※ 要移動光標，請依照說明分別按下 h、j、k、l 鍵。 ※※
 
+     ^
+     k		  提示︰ h 的鍵位于左邊，每次按下就會向左移動。
+ < h	  l >		   l 的鍵位于右邊，每次按下就會向右移動。
+     j			   j 鍵看起來很象一支尖端方向朝下的箭頭。
+     v
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1.
 
-(1). Move the cursor to the first line below marked --->.
+** 在正常模式下，可以按下 i 鍵來插入文本。**
 
-(2). To make the first line the same as the second, move the cursor on top
-   of the character BEFORE which the text is to be inserted.
+(1). 請將光標移動到本節中下面標記有 ---> 的第一行。
 
-(3). Press  i  and type in the necessary additions.
+(2). 為了使得第一行內容雷同于第二行，請將光標移至文本第一個字符準備插入
+   的位置。
 
-(4). As each error is fixed press <ESC> to return to Normal mode.
-   Repeat steps 2 through 4 to correct the sentence.
+(3). 然後按下 i 鍵，接著輸入必要的文本字符。
+
+(4). 所有文本都修正完畢，請按下 <ESC> 鍵返回正常模式。
+   重復步驟2至步驟4以便修正句子。
 
 ---> There is text misng this .
 ---> There is some text missing from this line.
 
+a. 輸入小寫的 o 可以在光標下方打開新的一行並將光標置于新開的行首，進入
+   插入模式。
+   輸入大寫的 O 可以在光標上方打開新的一行並將光標置于新開的行首，進入
+   插入模式。
+
+b. 輸入小寫的 a 可以在光標所在位置之後插入文本。
+   輸入大寫的 A 可以在光標所在行的行末之後插入文本。
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2.
 
-** Type  d$	to delete to the end of the line. **
+** 輸入 d$ 從當前光標刪除到行末。**
 
-(1). Press  <ESC>  to make sure you are in Normal mode.
+(1). 請按下 <ESC> 鍵確保您處于正常模式。
 
-(2). Move the cursor to the line below marked --->.
+(2). 請將光標移動到本節中下面標記有 ---> 的那一行。
 
-(3). Move the cursor to the end of the correct line (AFTER the first . ).
+(3). 請將光標移動到該行的尾部(也就是在第一個點號‘.’後面)。
 
-(4). Type    d$    to delete to the end of the line.
+(4). 然後輸入 d$ 從光標處刪至當前行尾部。
 
 ---> Somebody typed the end of this line twice. end of this line twice.
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 3. 
 
-** Press  u	to undo the last commands,   U  to fix a whole line. **
+** 輸入 u 來撤消最後執行的命令，輸入 U 來修正整行。**
 
-(1). Move the cursor to the line below marked ---> and place it on the
-     first error.
-
-(2). Type  x  to delete the first unwanted character.
-
-(3). Now type  u  to undo the last command executed.
-
-(4). This time fix all the errors on the line using the  x  command.
-
-(5). Now type a capital  U  to return the line to its original state.
-
-(6). Now type  u  a few times to undo the  U  and preceding commands.
-
-(7). Now type <C-R> (keeping CTRL key pressed while hitting R) a few times
-     to redo the commands (undo the undo).
+(1). 請將光標移動到本節中下面標記有 ---> 的那一行，並將其置于第一個錯誤
+   處。
+(2). 輸入 x 刪除第一個不想保留的字母。
+(3). 然後輸入 u 撤消最後執行的(一次)命令。
+(4). 這次要使用 x 修正本行的所有錯誤。
+(5). 現在輸入一個大寫的 U ，恢復到該行的原始狀態。
+(6). 接著多次輸入 u 以撤消 U 以及更前的命令。
+(7). 然後多次輸入 CTRL-R (先按下 CTRL 鍵不放開，接著輸入 R 鍵) ，這樣就
+   可以執行恢復命令，也就是撤消掉撤消命令。
 
 ---> Fiix the errors oon thhis line and reeplace them witth undo.
-
-(8). These are very useful commands.  Now move on to the lesson 2 Summary.
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 4.
 
-* Typing a number before a motion repeats it that many times. **
+* 在動作前面加上數字, 相當於重複這個動作數次 **
 
-(1). Move the cursor to the start of the line below marked --->.
+(1). 將光標放在本節下面標記有 ---> 那一行的開頭
 
-(2). Type  2w  to move the cursor two words forward.
+(2). 接著按 2w 光標會往前兩個字, 3k 3j 3h 3l 則是會分別移動上下左右三格
 
-(3). Type  3e  to move the cursor to the end of the third word forward.
+(3). 接著按 0 會回到開頭, 按 $ 會到行尾
 
-(4). Type  0  (zero) to move to the start of the line.
-
-(5). Repeat steps 2 and 3 with different numbers.
+(4). 重複步驟 2, 用不同的數字 eg: 10w
 
 ---> This is just a line with words you can move around in.
 
 **********************************************************************************
 5.
 
-** Type  %  to find a matching ),], or } . **
+** 按 % 可以查找配對的括號 )、]、}。**
 
-(1). Place the cursor on any (, [, or { in the line below marked --->.
+(1). 把光標放在本節下面標記有 --> 那一行中的任何一個 (、[ 或 { 處。
 
-(2). Now type the  %  character.
+(2). 接著按 % 字符。
 
-(3). The cursor will move to the matching parenthesis or bracket.
+(3). 此時光標的位置應當是在配對的括號處。
 
-(4). Type  %  to move the cursor to the other matching bracket.
+(4). 再次按 % 就可以跳回配對的第一個括號處。
 
-(5). Move the cursor to another (,),[,],{ or } and see what  %  does.
-
-// ---> This ( is a test line with ('s, ['s ] and {'s } in it. ))
-
+ ---> This ( is a test line with (s, [s ] and {s } in it. ))
 
 **********************************************************************************
-6.
 
-** Use the  y  operator to copy text and  p  to paste it **
+6. 視覺模式 (Visual Mode)!!!
 
-(1). Move to the line below marked ---> and place the cursor after "a)".
+** 要按下 v 利用 Visual Mode 將指定區塊的文字刪除**
 
-(2). Start Visual mode with  v  and move the cursor to just before "first".
+(1). 將光標移到 ---> 和 <--- 之間
 
-(3). Type  y  to yank (copy) the highlighted text.
+--->
+(2). 按下 v 然後移動光標到下面, 會注意到被選取的範圍會被 highlighted
 
-(4). Move the cursor to the end of the next line:  j$
+(3). 按下 d 刪除選取的範圍
+<---
 
-(5). Type  p  to put (paste) the text.  Then type:  a second <ESC> .
+(4). 按下 u, 取消剛剛做的動作
+
+(5). 按下 ctrl+r, 取消剛剛的取消
+
+**********************************************************************************
+
+7.
+
+** 利用 Visual Mode, 來做到複製 y 和貼上 p **
+
+(1). 將光標移到 ---> "a)" 後面.
+
+(2). 按下 v 開始 visual mode, 然後將光標移到 "first" 前面.
+
+(3). 按下 y (copy) 將選取的範圍複製下來
+
+(4). 將光標移到下一行的最後: j$
+
+(5). 按下 p 將剛剛複製的內容貼上, 按下 <ESC> 回到 Normal mode
 
 (6). Use Visual mode to select " item.", yank it with  y , move to the end of
      the next line with  j$  and put the text there with  p .
 
+(6). 重複上面動作將還未複製完的複製完
+     
 --->  a) this is the first item.
       b)
-      
-***************************************************************************************
-7. Visual Mode!!!
 
-** To delete part of the file, type  v  motion, select block of words to be deleted **
 
-(1). Move the cursor to this line. select block between ---> and <--- , 
+*************************** ******************************************************************
 
---->
-(2). Press  v  and move the cursor to the fifth item below.  Notice that the
-     text is highlighted.
-
-(3). Press the  d character.
-<---
-
-(4). Press u.
-(5). Press <C-r>
-
-NOTE:  Pressing  v  starts Visual selection.  You can move the cursor around
-       to make the selection bigger or smaller.  Then you can use an operator
-       to do something with the text.  For example,  y  copy the text.
+在正常模式下一個命令的格式是︰
+     [number] command object 或者 command [number] object
+     其意是︰
+       number - 代表的是命令執行的次數
+       command - 代表要做的事情，比如 d 代表刪除, y 代表複製
+       object - 代表要操作的對象，比如 w 代表單字/單詞, h j k l 代表向上下左右，$ 代表到行末等等。
+		$ (to the end of line), etc.
