@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { GraphConfiguration } from "../config/GraphConfiguration";
+import { UIComponentType } from "../constant";
 import { UIComponent } from "../model/UIComponent.model";
 import { ButtonStrategy } from "../strategy/ButtonStrategy";
 import { FormStrategy } from "../strategy/FormStrategy";
@@ -51,13 +52,13 @@ export class GraphEditorService {
   }
 
   createComponent(uiComponent: UIComponent, parent?: mxCell): mxCell {
-    if (uiComponent["type"] == "button") {
+    if (uiComponent.type === UIComponentType.Button) {
       this.setStrategy(new ButtonStrategy());
-    } else if (uiComponent["type"] == "table") {
+    } else if (uiComponent.type === UIComponentType.Table) {
       this.setStrategy(new TableStrategy());
-    } else if (uiComponent["type"] == "inputText") {
+    } else if (uiComponent.type === UIComponentType.InputText) {
       this.setStrategy(new InputTextStrategy());
-    } else if (uiComponent["type"] == "form") {
+    } else if (uiComponent.type === UIComponentType.Form) {
       this.setStrategy(new FormStrategy());
     }
     return this.createComponentStrategy.createComponent(
