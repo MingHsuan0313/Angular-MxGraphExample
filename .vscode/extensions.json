@@ -16,7 +16,9 @@
     "jacobdufault.fuzzy-search",
     "gitkraken.gitkraken-authentication",
     "sleistner.vscode-fileutils",
-    "Shan.code-settings-sync"
+    "Shan.code-settings-sync",
+    "PKief.material-icon-theme",
+    "zhuangtongfa.material-theme"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
