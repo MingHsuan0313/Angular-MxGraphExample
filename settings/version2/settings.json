@@ -1,0 +1,306 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorCustomizations": {
+    "[One Dark Pro]": {
+      "tab.activeBorder": "#0A84FF"
+    }
+  },
+  "vim.easymotion": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vim.leader": ",",
+  "vim.handleKeys": {
+    "<C-f>": false,
+    "<C-t>": false,
+    "<C-w>": false,
+    "<C-g>": false,
+    "<C-d>": false
+  },
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "<leader>"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "?"],
+      "commands": ["search.action.openNewEditorToSide"]
+    },
+    {
+      "before": ["shift+w"],
+      "commands": ["editor.emmet.action.wrapWithAbbreviation"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["?"],
+      "commands": ["fuzzySearch.activeTextEditor"]
+    },
+    {
+      "before": ["shift+k"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "after": ["v", "i", "w", "<leader>", "?"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.startFindReplaceAction"]
+    },
+    {
+      "before": ["shift+t"],
+      "commands": ["editor.emmet.action.matchTag"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "after": ["<leader>", "<leader>", "<leader>", "b", "d", "w"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.startFindReplaceAction"]
+    },
+    {
+      "before": ["<leader>", "?"],
+      "commands": ["search.action.openNewEditorToSide"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.action.revealDefinitionAside"]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["notifications.clearAll"]
+    },
+    {
+      "before": ["q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<C-w>", "k"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<C-w>", "j"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["<C-w>", "h"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<C-w>", "l"]
+    },
+    {
+      "before": ["tab"],
+      "commands": ["extension.vim_ctrl+pagedown"],
+      "when": "editorFocus"
+    },
+    {
+      "before": ["shift+tab"],
+      "commands": ["extension.vim_ctrl+pageup"]
+    },
+    {
+      "before": ["<C-b>"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<C-e>"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<C-f>"],
+      "commands": ["actions.find"]
+    }
+  ],
+  "editor.tabSize": 4,
+  "editor.lineNumbers": "relative",
+  "editor.renderWhitespace": "all",
+  "whichkey.bindings": [
+    {
+      "key": "p",
+      "name": "Peek...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "d",
+          "name": "Definition",
+          "type": "command",
+          "command": "editor.action.peekDefinition",
+          "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+        },
+        {
+          "key": "D",
+          "name": "Declaration",
+          "type": "command",
+          "command": "editor.action.peekDeclaration"
+        },
+        {
+          "key": "i",
+          "name": "Implementation",
+          "type": "command",
+          "command": "editor.action.peekImplementation",
+          "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+        },
+        {
+          "key": "p",
+          "name": "Toggle Focus",
+          "type": "command",
+          "command": "togglePeekWidgetFocus",
+          "when": "inReferenceSearchEditor || referenceSearchVisible"
+        },
+        {
+          "key": "r",
+          "name": "References",
+          "type": "command",
+          "command": "editor.action.referenceSearch.trigger"
+        },
+        {
+          "key": "t",
+          "name": "Type Definition",
+          "type": "command",
+          "command": "editor.action.peekTypeDefinition"
+        }
+      ]
+    },
+    {
+      "key": "d",
+      "name": "Close editor group",
+      "type": "command",
+      "command": "workbench.action.closeEditorsInGroup"
+    },
+    {
+      "key": "x",
+      "name": "Close all editor groups",
+      "type": "command",
+      "command": "workbench.action.closeAllGroups"
+    },
+    {
+      "key": "=",
+      "name": "Reset Editor Groups Size",
+      "type": "command",
+      "command": "workbench.action.evenEditorWidths"
+    },
+    {
+      "key": "m",
+      "name": "Maximize Editor Group Size",
+      "type": "command",
+      "command": "workbench.action.maximizeEditor"
+    },
+    {
+      "key": "z",
+      "name": "Toggle zen mode",
+      "type": "command",
+      "command": "workbench.action.toggleZenMode"
+    },
+    {
+      "key": "v",
+      "name": "Split Vertical",
+      "type": "command",
+      "command": "workbench.action.splitEditor"
+    },
+    {
+      "key": "h",
+      "name": "Split Horizontal",
+      "type": "command",
+      "command": "workbench.action.splitEditorDown"
+    },
+    {
+      "key": "g",
+      "name": "Git...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "b",
+          "name": "Toggle Git Blame",
+          "type": "command",
+          "command": "gitlens.toggleFileBlame"
+        },
+        {
+          "key": "l",
+          "name": "Diff Line With Previous Changes",
+          "type": "command",
+          "command": "gitlens.diffLineWithPrevious"
+        },
+        {
+          "key": "p",
+          "name": "Diff File With Previous Changes",
+          "type": "command",
+          "command": "gitlens.diffWithPreviousInDiffRight"
+        },
+        {
+          "key": "n",
+          "name": "Diff File With Next Changes",
+          "type": "command",
+          "command": "gitlens.diffWithNextInDiffRight"
+        },
+        {
+          "key": "g",
+          "name": "Open Git Graph",
+          "type": "command",
+          "command": "git-graph.view"
+        },
+        {
+          "key": "G",
+          "name": "View Source Control",
+          "type": "command",
+          "command": "workbench.view.scm"
+        }
+      ]
+    },
+    {
+      "key": "f",
+      "name": "File Utils",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "d",
+          "name": "delete file",
+          "type": "command",
+          "command": "fileutils.removeFile"
+        },
+        {
+          "key": "m",
+          "name": "move file",
+          "type": "command",
+          "command": "fileutils.moveFile"
+        },
+        {
+          "key": "c",
+          "name": "copy file",
+          "type": "command",
+          "command": "fileutils.duplicateFile"
+        },
+        {
+          "key": "r",
+          "name": "rename file",
+          "type": "command",
+          "command": "fileutils.renameFile"
+        },
+        {
+          "key": "n",
+          "name": "new file",
+          "type": "command",
+          "command": "fileutils.newFile"
+        },
+        {
+          "key": "N",
+          "name": "new file (Project root)",
+          "type": "command",
+          "command": "fileutils.newFileAtRoot"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+    {
+    "key": "space", 
+    "command": "whichkey.show",
+    "when": "editorTextFocus && vim.mode != 'Insert'"
+    },
+    {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.moveEditorToRightGroup",
+    "when": "editorFocus"
+    },
+    {
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.moveEditorToLeftGroup",
+    "when": "editorFocus"
+    },
+    {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.moveEditorToBelowGroup",
+    "when": "editorFocus"
+    },
+    {
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.moveEditorToAboveGroup",
+    "when": "editorFocus"
+    },
+    {
+    "key": "shift+h",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorFocus"
+    },
+]
